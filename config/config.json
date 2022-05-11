@@ -1,0 +1,7 @@
+{
+  "featureApi": {
+    "baseUri": "/koa-api-template",
+    "autoDiscoveryFeatures": true,
+    "routes": []
+  }
+}

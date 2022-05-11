@@ -1,0 +1,19 @@
+[
+  {
+    "name": "logger",
+    "file": "logger",
+    "depends": [],
+    "order": 1
+  },
+  {
+    "name": "feature-api",
+    "file": "feature-api",
+    "depends": ["logger"],
+    "order": 3
+  },
+  {
+    "name": "health-api",
+    "file": "health-api",
+    "depends": ["logger"]
+  }
+]

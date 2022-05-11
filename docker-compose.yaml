@@ -1,0 +1,42 @@
+version: '2'
+
+services:
+# ===================================================================
+  koa-api-template:
+    container_name: koa-api-template
+    hostname: koa-api-template
+    image: koa-api-template:dev
+
+    build:
+      context: .
+      dockerfile: .docker/development.dockerfile
+    volumes:
+      - .:/opt/app
+      - /opt/app/node_modules
+      - ./config:/config
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    working_dir: /opt/app
+    environment:
+      NODE_ENV: development
+      MONGO_URI: mongodb://management-mongodb:27017/ressarcimento
+    networks:
+      - koa-api-template-private-network
+    entrypoint: yarn serve
+
+  management-mongodb:
+    container_name: management-mongodb
+    hostname: management-mongodb
+    image: mongo:4.4.10-rc0
+    ports:
+      - 27017:27017
+    networks:
+      - koa-api-template-private-network
+    logging:
+      driver: none
+
+# ===================================================================
+networks:
+  koa-api-template-private-network:
+    driver: bridge

@@ -1,0 +1,104 @@
+{
+  "name": "adviseu-hubspot-psoffice",
+  "version": "1.0.0",
+  "description": "AdviseU - Integração Hubspot -> PSOffice",
+  "main": "index.js",
+  "contributors": [
+    {
+      "name": "Elias Oliveira",
+      "email": "elias.oliveira@adviseu.com.br"
+    }
+  ],
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "blob": "^0.1.0",
+    "bunyan": "^1.8.15",
+    "chalk": "^5.0.1",
+    "commander": "^9.2.0",
+    "date-fns": "^2.25.0",
+    "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-favicon": "^2.1.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^10.0.0",
+    "mongoose": "^6.0.10",
+    "ramda": "^0.27.1",
+    "ts-node": "^10.7.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/bunyan": "^1.8.7",
+    "@types/jest": "^27.0.2",
+    "@types/jsonwebtoken": "^8.5.5",
+    "@types/koa": "^2.11.6",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-json": "^2.0.18",
+    "@types/koa-logger": "^3.1.1",
+    "@types/koa-router": "^7.4.1",
+    "@types/node": "^14.14.14",
+    "@types/ramda": "^0.27.46",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
+    "eslint": "^8.1.0",
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.6",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.1.3"
+  },
+  "scripts": {
+    "cli": "ts-node src/cli.ts",
+    "lint": "yarn eslint src --ext .ts",
+    "start": "ts-node src/index.ts",
+    "serve": "nodemon --watch 'src/' --exec 'eslint src --ext .ts; ts-node src/index.ts' -e ts",
+    "test": "ts-jest --verbose --detectOpenHandles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.adviseu.com.br:adviseu-apps/adviseu-hubspot-psoffice.git"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "ts",
+      "tsx"
+    ],
+    "transform": {
+      "\\.ts$": "ts-jest"
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "coverageReporters": [
+      "text",
+      "text-summary"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)x?$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/",
+      "/coverage/",
+      "/config/",
+      "/migrations/"
+    ]
+  },
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "**/*.{ts,js}",
+    "!**/node_modules/**",
+    "!**/dist/**",
+    "!**/coverage/**"
+  ]
+}

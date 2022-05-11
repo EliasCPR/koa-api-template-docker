@@ -1,12 +1,12 @@
 {
-  "name": "adviseu-hubspot-psoffice",
+  "name": "koa-api-template",
   "version": "1.0.0",
-  "description": "AdviseU - Integração Hubspot -> PSOffice",
+  "description": "nodejs koa api template",
   "main": "index.js",
   "contributors": [
     {
       "name": "Elias Oliveira",
-      "email": "elias.oliveira@adviseu.com.br"
+      "email": "eliascpr123@gmail.com"
     }
   ],
   "license": "UNLICENSED",
@@ -58,10 +58,7 @@
     "serve": "nodemon --watch 'src/' --exec 'eslint src --ext .ts; ts-node src/index.ts' -e ts",
     "test": "ts-jest --verbose --detectOpenHandles"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@git.adviseu.com.br:adviseu-apps/adviseu-hubspot-psoffice.git"
-  },
+
   "jest": {
     "moduleFileExtensions": [
       "js",
